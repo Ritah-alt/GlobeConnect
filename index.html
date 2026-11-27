@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GlobeConnect - Your Trade Readiness Partner</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f6f8f5;color:#1a2a1a}
+header{background:#0b3d2e;color:#fff;padding:18px;text-align:center}
+header h1{margin:0;font-size:26px} header p{margin:5px 0 0;opacity:.9}
+nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;background:#fff;padding:10px;position:sticky;top:0;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+nav button{border:0;background:#eef4ee;padding:9px 12px;border-radius:20px;cursor:pointer;font-weight:700}
+nav button.active{background:#0b3d2e;color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+.card{background:#fff;border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.btn{background:#e8a020;border:0;padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer;width:100%;margin-top:10px}
+input,select,textarea{width:100%;padding:11px;margin:6px 0;border:1px solid #ddd;border-radius:10px;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.badge{background:#d9f2d9;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:700}
+footer{text-align:center;padding:20px;opacity:.7}
+</style></head>
+<body>
+<header><h1>🌍 GlobeConnect</h1><p>Your Trade Readiness Partner — From Farm to EU Market</p></header>
+<nav id="menu">
+<button class="active" onclick="show('home',this)">Home</button>
+<button onclick="show('starter',this)">Starter / Onboarding</button>
+<button onclick="show('role',this)">Role Access</button>
+<button onclick="show('ship',this)">Shipments</button>
+<button onclick="show('prod',this)">Products + Locations</button>
+<button onclick="show('comp',this)">Compliance Check</button>
+<button onclick="show('calc',this)">Calculator</button>
+<button onclick="show('vault',this)">Document Vault</button>
+<button onclick="show('market',this)">Marketplace</button>
+<button onclick="show('score',this)">Supplier Scorecard</button>
+</nav>
+<div class="wrap">
+
+<div id="home" class="page"><div class="card"><span class="badge">EU-READY • EUDR • CBAM</span><h2>Export with Confidence 🇺🇬 → 🇪🇺</h2><p>GlobeConnect helps African exporters get EU-ready. Check compliance, track shipments, calculate costs, store documents and find buyers — all in one place.</p><div class="grid"><div class="card"><h3>✅ Are you EU-Ready?</h3><p>Take the 2-minute check.</p><button class="btn" onclick="show('comp',document.querySelectorAll('nav button')[5])">Start Compliance Check</button></div><div class="card"><h3>💰 Know Your Profit</h3><p>Calculate FOB, freight, duty & margin.</p><button class="btn" onclick="show('calc',document.querySelectorAll('nav button')[6])">Open Calculator</button></div></div></div></div>
+
+<div id="starter" class="page" style="display:none"><div class="card"><h2>🚀 Starter / Onboarding</h2><p>Tell us about your business:</p><input placeholder="Your Name"><input placeholder="Business Name"><select><option>What do you export?</option><option>Coffee</option><option>Cocoa</option><option>Vanilla</option><option>Shea Butter</option><option>Fruits & Vegetables</option><option>Other</option></select><select><option>Target Market</option><option>Germany</option><option>Netherlands</option><option>France</option><option>UK</option><option>EU - Other</option></select><button class="btn" onclick="alert('Welcome to GlobeConnect! Your profile is saved. Now go to Compliance Check.')">Create My Profile →</button></div></div>
+
+<div id="role" class="page" style="display:none"><div class="card"><h2>👥 Role Access</h2><div class="grid"><div class="card"><b>🧑‍🌾 Farmer / Exporter</b><p>Upload products, documents, track shipments.</p></div><div class="card"><b>🛒 Buyer / Importer</b><p>Find verified suppliers, view scorecards.</p></div><div class="card"><b>🚚 Logistics</b><p>Update shipment status.</p></div><div class="card"><b>👩‍💼 Admin</b><p>Verify compliance, approve suppliers.</p></div></div></div></div>
+
+<div id="ship" class="page" style="display:none"><div class="card"><h2>📦 Shipments</h2><input placeholder="Shipment ID e.g. GC-001"><select><option>Status: Preparing</option><option>In Transit - Mombasa → Hamburg</option><option>Customs Clearance</option><option>Delivered</option></select><button class="btn" onclick="alert('Shipment saved!')">Add Shipment</button><p><b>Example:</b> GC-001 • Coffee 500kg • Kampala → Hamburg • In Transit 🚢</p></div></div>
+
+<div id="prod" class="page" style="display:none"><div class="card"><h2>📍 Products + Locations</h2><input placeholder="Product e.g. Arabica Coffee"><input placeholder="Location / Farm e.g. Mbale, Uganda"><input placeholder="Quantity kg"><button class="btn" onclick="alert('Product added!')">Add Product</button></div></div>
+
+<div id="comp" class="page" style="display:none"><div class="card"><h2>✅ Compliance Check - EUDR & CBAM</h2><label><input type="checkbox"> I have Geolocation of farm (GPS coordinates)</label><br><label><input type="checkbox"> I have No-Deforestation proof</label><br><label><input type="checkbox"> I have Due Diligence Statement</label><br><label><input type="checkbox"> I have CBAM / Carbon data</label><br><button class="btn" onclick="alert('You checked 4 items. If all 4 are ticked, you are EU-READY! If not, upload missing docs in Document Vault.')">Check My Readiness</button></div></div>
+
+<div id="calc" class="page" style="display:none"><div class="card"><h2>🧮 Calculator</h2><label>Quantity (kg)</label><input id="kg" type="number" value="500"><label>Price per kg (USD)</label><input id="price" type="number" value="4"><label>Freight (USD)</label><input id="freight" type="number" value="800"><button class="btn" onclick="calc()">Calculate Profit</button><h3 id="result">Total Revenue: $0</h3></div></div>
+
+<div id="vault" class="page" style="display:none"><div class="card"><h2>🗂️ Document Vault</h2><p>Keep your EU documents safe:</p><ul><li>📄 Certificate of Origin</li><li>🌳 EUDR Due Diligence Statement</li><li>📦 Phytosanitary Certificate</li><li>🧾 Invoice & Packing List</li></ul><button class="btn" onclick="alert('In full version, you can upload PDFs here. For now, keep your paper copies ready for EU buyers.')">Upload Document (Coming Soon)</button></div></div>
+
+<div id="market" class="page" style="display:none"><div class="card"><h2>🛒 Marketplace</h2><div class="card"><b>☕ Arabica Coffee - Mbale, Uganda</b><p>500kg • $4/kg • EU-Ready ✅</p><button class="btn">Contact Supplier</button></div><div class="card"><b>🍫 Cocoa - Bundibugyo</b><p>1000kg • $2.8/kg • EUDR Verified ✅</p><button class="btn">Contact Supplier</button></div></div></div>
+
+<div id="score" class="page" style="display:none"><div class="card"><h2>⭐ Supplier Scorecard</h2><p><b>Supplier:</b> Ritah Coffee Ltd - Uganda</p><p>Compliance: 92% ⭐⭐⭐⭐⭐</p><p>On-time Delivery: 95%</p><p>Quality: 4.8 / 5</p><p><span class="badge">VERIFIED SUPPLIER ✅</span></p></div></div>
+
+</div>
+<footer>© 2026 GlobeConnect • Made with 💛 by Ritah in Uganda for the World</footer>
+<script>
+function show(id,btn){document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');window.scrollTo(0,0)}
+function calc(){let kg=+document.getElementById('kg').value, pr=+document.getElementById('price').value, fr=+document.getElementById('freight').value; let rev=kg*pr; let profit=rev-fr; document.getElementById('result').innerText='Total Revenue: $'+rev+' | Profit after freight: $'+profit}
+</script></body></html>
