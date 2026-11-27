@@ -30,6 +30,13 @@ footer{text-align:center;padding:20px;opacity:.7}
 <button onclick="show('vault',this)">Document Vault</button>
 <button onclick="show('market',this)">Marketplace</button>
 <button onclick="show('score',this)">Supplier Scorecard</button>
+<button onclick="show('esg',this)">EU Reporting & ESG</button>
+<button onclick="show('buyer',this)">EU Buyer Pass</button>
+<button onclick="show('train',this)">Training</button>
+<button onclick="show('acct',this)">Accounting</button>
+<button onclick="show('audit',this)">Audit Trail</button>
+<button onclick="show('gov',this)">Governance</button>
+<button onclick="show('set',this)">Settings</button>
 </nav>
 <div class="wrap">
 
@@ -44,7 +51,13 @@ footer{text-align:center;padding:20px;opacity:.7}
 <div id="prod" class="page" style="display:none"><div class="card"><h2>📍 Products + Locations</h2><input placeholder="Product e.g. Arabica Coffee"><input placeholder="Location / Farm e.g. Mbale, Uganda"><input placeholder="Quantity kg"><button class="btn" onclick="alert('Product added!')">Add Product</button></div></div>
 
 <div id="comp" class="page" style="display:none"><div class="card"><h2>✅ Compliance Check - EUDR & CBAM</h2><label><input type="checkbox"> I have Geolocation of farm (GPS coordinates)</label><br><label><input type="checkbox"> I have No-Deforestation proof</label><br><label><input type="checkbox"> I have Due Diligence Statement</label><br><label><input type="checkbox"> I have CBAM / Carbon data</label><br><button class="btn" onclick="alert('You checked 4 items. If all 4 are ticked, you are EU-READY! If not, upload missing docs in Document Vault.')">Check My Readiness</button></div></div>
-
+<div id="esg" class="page" style="display:none"><div class="card"><h2>📊 EU Reporting & ESG</h2><p>CSRD / ESRS reporting for EU buyers.</p></div></div>
+<div id="buyer" class="page" style="display:none"><div class="card"><h2>✅ EU Buyer Pass</h2><p>Verified pass for EU buyers. VERIFIED</p></div></div>
+<div id="train" class="page" style="display:none"><div class="card"><h2>🎓 Training and Capacity Building</h2><p>Learn EUDR, CBAM and export readiness.</p></div></div>
+<div id="acct" class="page" style="display:none"><div class="card"><h2>💰 Accounting (Automated)</h2><p>HGB / IFRS accounting.</p></div></div>
+<div id="audit" class="page" style="display:none"><div class="card"><h2>🔒 Audit Trail / Governance</h2><p>Locked audit trail. LOCKED</p></div></div>
+<div id="gov" class="page" style="display:none"><div class="card"><h2>⚖️ Governance & Founder</h2><p>Founded by Namubiru Ritah.</p></div></div>
+<div id="set" class="page" style="display:none"><div class="card"><h2>⚙️ Settings & Tax IDs</h2><p>Your settings and tax IDs.</p></div></div>
 <div id="calc" class="page" style="display:none"><div class="card"><h2>🧮 Calculator</h2><label>Quantity (kg)</label><input id="kg" type="number" value="500"><label>Price per kg (USD)</label><input id="price" type="number" value="4"><label>Freight (USD)</label><input id="freight" type="number" value="800"><button class="btn" onclick="calc()">Calculate Profit</button><h3 id="result">Total Revenue: $0</h3></div></div>
 
 <div id="vault" class="page" style="display:none"><div class="card"><h2>🗂️ Document Vault</h2><p>Keep your EU documents safe:</p><ul><li>📄 Certificate of Origin</li><li>🌳 EUDR Due Diligence Statement</li><li>📦 Phytosanitary Certificate</li><li>🧾 Invoice & Packing List</li></ul><button class="btn" onclick="alert('In full version, you can upload PDFs here. For now, keep your paper copies ready for EU buyers.')">Upload Document (Coming Soon)</button></div></div>
